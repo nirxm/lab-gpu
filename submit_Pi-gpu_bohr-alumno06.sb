@@ -22,3 +22,5 @@ python pi-gpu-alumno06.py 10000000
 echo "-----------------------------------"
 echo "Lanzando para N = 100,000,000"
 python pi-gpu-alumno06.py 100000000
+
+module unload anaconda/2025.06
