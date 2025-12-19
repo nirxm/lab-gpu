@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#SBATCH --job-name=pi-gpu-33c
+#SBATCH --partition=bohr-gpu
+#SBATCH --output=pi-gpu-%j.out
+#SBATCH --error=pi-gpu-%j.err
+#SBATCH --chdir=/home/alumno06/lab-gpu
+
+# Cargar Anaconda
+module load anaconda/2025.06
+
+# 1. Convertir Notebook a script de Python normal (.py)
+echo "Convirtiendo notebook..."
+jupyter nbconvert --to python pi-gpu-alumno06.ipynb
+
+# 2. Ejecutar para N = 10^7 (10 Millones)
+echo "-----------------------------------"
+echo "Lanzando para N = 10,000,000"
+python pi-gpu-alumno06.py 10000000
+
+# 3. Ejecutar para N = 10^8 (100 Millones)
+echo "-----------------------------------"
+echo "Lanzando para N = 100,000,000"
+python pi-gpu-alumno06.py 100000000
