@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#SBATCH --job-name=pytorch-extra
+#SBATCH --partition=bohr-gpu
+#SBATCH --output=pytorch_extra_%j.out
+#SBATCH --error=pytorch_extra_%j.err
+#SBATCH --chdir=/home/alumno06/lab-gpu
+
+
+# Cargar módulo
+module load anaconda/2025.06
+
+# 1. Convertir los notebooks a scripts de Python
+echo "Convirtiendo notebooks..."
+jupyter nbconvert --to python matrix-mult-alumno06.ipynb
+ jupyter nbconvert --to python pi-extra-alumno06.ipynb
+
+# 2. Ejecutar Multiplicación de Matrices
+echo "=========================================="
+echo " EJECUTANDO MULTIPLICACIÓN MATRICES (PyTorch)"
+echo "=========================================="
+python matrix-mult-alumno06.py
+
+# 3. Ejecutar PI 
+ echo "=========================================="
+ echo " EJECUTANDO PI CON PYTORCH"
+ echo "=========================================="
+ python pi-extra-alumno06.py
+
+module unload anaconda/2025.06

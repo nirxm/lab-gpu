@@ -1,0 +1,15 @@
+Convirtiendo notebooks...
+==========================================
+ EJECUTANDO MULTIPLICACIÓN MATRICES (PyTorch)
+==========================================
+--- Multiplicación de Matrices 7000x7000 con PYTORCH ---
+Dispositivo: NVIDIA GeForce RTX 2080 Ti
+Tiempo de generación de datos en VRAM: 0.7333 s
+Tiempo de ejecución (PyTorch): 0.06051 s
+Rendimiento Gráfico: 11337.34 GFLOPS
+==========================================
+ EJECUTANDO PI CON PYTORCH
+==========================================
+--- Calculando PI con PyTorch (N=100000000) ---
+PI: 3.1412896
+Tiempo PyTorch: 1.75892 s
